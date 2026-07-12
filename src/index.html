@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./output.css" />
+		<style>
+			@keyframes marquee {
+				0% {
+					transform: translateX(0%);
+				}
+				100% {
+					transform: translateX(calc(-100% - 1.5rem));
+				} /* 1.5rem bu gap-6 masofasi */
+			}
+			.animate-marquee {
+				animation: marquee 35s linear infinite;
+			}
+			.pause {
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body class="overflow-x-hidden">
+		<!-- HEADER START -->
+		<header class="w-full border-b border-gray-100 relative bg-white z-50">
+			<div class="container mx-auto max-w-[1440px] px-4 md:px-7">
+				<div class="flex h-16 items-center justify-between">
+					<!-- MOBILE MENU BUTTON -->
+					<button id="menu-btn" class="block md:hidden focus:outline-none z-50">
+						<img id="menu-icon" class="w-6 h-6" src="images/header/menu.svg" alt="Menu" />
+					</button>
+
+					<!-- LEFT -->
+					<ul class="hidden md:flex items-center gap-7">
+						<li>
+							<a href="#" class="text-[13px] uppercase text-black transition duration-300 hover:text-gray-500"> Shop </a>
+						</li>
+						<li>
+							<a href="#" class="text-[13px] uppercase text-black transition duration-300 hover:text-gray-500"> Explore </a>
+						</li>
+					</ul>
+
+					<!-- LOGO -->
+					<a href="#" class="md:absolute md:left-1/2 md:-translate-x-1/2 lg:static lg:translate-x-0">
+						<img class="w-32 md:w-40" src="images/header/logo.png" alt="Grovemade Logo" />
+					</a>
+
+					<!-- RIGHT -->
+					<a href="#" class="text-[13px] uppercase text-black transition duration-300 hover:text-gray-500"> My Cart </a>
+				</div>
+			</div>
+
+			<!-- MOBILE DROPDOWN MENU -->
+			<div
+				id="mobile-menu"
+				class="hidden absolute top-16 left-0 w-full bg-white border-b border-gray-200 shadow-lg md:hidden transition-all duration-300">
+				<ul class="flex flex-col p-6 gap-4">
+					<li>
+						<a href="#" class="text-base uppercase text-black block py-2 hover:text-gray-500"> Shop </a>
+					</li>
+					<li>
+						<a href="#" class="text-base uppercase text-black block py-2 hover:text-gray-500"> Explore </a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<!-- HEADER END -->
+
+		<!-- MAIN START -->
+		<main>
+			<!-- HERO START -->
+			<section class="h-[400px] md:h-[504px] bg-[url('./images/hero/hero-bg.png')] bg-cover bg-center bg-no-repeat px-4">
+				<div class="h-full flex flex-col items-center justify-center text-center">
+					<h1 class="text-3xl md:text-5xl text-white font-medium">The Desk Shelf System</h1>
+					<p class="mt-4 text-base md:text-lg text-gray-200">Available in Walnut or Maple</p>
+					<a href="#" class="mt-6 pb-1 text-gray-200 hover:underline">Learn More</a>
+				</div>
+			</section>
+			<!-- HERO END -->
+
+			<!-- INSPIRES START -->
+			<section class="px-4">
+				<div class="h-full flex flex-col items-center justify-center mt-12 md:mt-20 text-center">
+					<h1 class="text-3xl md:text-5xl text-black">Design Inspires</h1>
+					<p class="mt-4 md:mt-7 text-base md:text-lg text-gray-500 max-w-[600px]">
+						Build your dream workspace, so you can get your best work done.
+					</p>
+					<a href="#" class="mt-4 md:mt-6 text-xl md:text-2xl mb-10 md:mb-20 pb-1 hover:underline">Get Started</a>
+				</div>
+
+				<!-- IMG SECTION -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 pb-5 max-w-[1365px] mx-auto">
+					<div class="text-center">
+						<img class="w-full object-cover rounded-xl" src="images/inspires/inspires__first-img.png" alt="first-img" />
+						<p class="mt-6 md:mt-12 mb-2 text-xl md:text-2xl">Desk Pads</p>
+						<a href="#" class="hover:underline text-sm md:text-base">Learn More</a>
+					</div>
+					<div class="text-center">
+						<img class="w-full object-cover rounded-xl" src="images/inspires/inspires__nd-img.png" alt="second-img" />
+						<p class="mt-6 md:mt-12 mb-2 text-xl md:text-2xl">Laptop Stands</p>
+						<a href="#" class="hover:underline text-sm md:text-base">Learn More</a>
+					</div>
+				</div>
+			</section>
+			<!-- INSPIRES END -->
+
+			<!-- PRODUCTS START -->
+			<section class="px-4 overflow-hidden">
+				<div class="h-full flex flex-col items-center justify-center mt-20 text-center">
+					<h1 class="text-4xl text-black">Featured Products</h1>
+					<p class="mt-7 text-lg text-gray-500">See What’s Trending Right Now</p>
+					<img class="mt-6 mb-2 pb-1" src="images/products/point.svg" alt="point-img" />
+				</div>
+
+				<!-- INFINITE SCROLL -->
+				<div class="max-w-[1365px] mx-auto mt-8 flex gap-6 overflow-hidden relative group">
+					<div class="flex gap-6 shrink-0 animate-marquee group-hover:pause">
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/first-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut MagSafe Stand</p>
+							<p class="text-gray-500">$120</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/second-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut Laptop Riser</p>
+							<p class="text-gray-500">$150</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/third-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut iPad Stand</p>
+							<p class="text-gray-500">$80</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/fourth-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut Monitor Stand</p>
+							<p class="text-gray-500">$100</p>
+						</div>
+					</div>
+					<!-- 2-LINE -->
+					<div class="flex gap-6 shrink-0 animate-marquee group-hover:pause" aria-hidden="true">
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/first-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut MagSafe Stand</p>
+							<p class="text-gray-500">$120</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/second-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut Laptop Riser</p>
+							<p class="text-gray-500">$150</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/third-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut iPad Stand</p>
+							<p class="text-gray-500">$80</p>
+						</div>
+						<div class="w-[300px] shrink-0">
+							<img class="rounded-2xl w-full" src="images/products/fourth-img.png" alt="img" />
+							<p class="mt-4 mb-2 text-xl text-gray-500">Walnut Monitor Stand</p>
+							<p class="text-gray-500">$100</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- PRODUCTS END -->
+
+			<!-- OFFICE START -->
+			<section
+				class="h-[400px] md:h-[504px] mt-16 md:mt-24 bg-[url('./images/office/bg-img.png')] bg-cover bg-center bg-no-repeat px-4">
+				<div class="h-full flex flex-col items-center justify-center text-center max-w-[600px] mx-auto">
+					<h1 class="text-3xl md:text-6xl text-white">Home Office Inspiration</h1>
+					<p class="mt-4 md:mt-5 text-sm md:text-lg text-gray-200">
+						Working from home can be a challenge—see some creative solutions to get it just right.
+					</p>
+					<a href="#" class="mt-6 pb-1 text-gray-200 hover:underline">Learn More</a>
+				</div>
+			</section>
+			<!-- OFFICE END -->
+
+			<!-- HARD WAY START -->
+			<section class="px-4">
+				<div class="flex flex-col items-center mt-16 md:mt-20 text-center">
+					<h1 class="text-3xl md:text-5xl text-black">Made The Hard Way</h1>
+					<p class="mt-4 md:mt-7 max-w-[777px] text-sm md:text-[16px] text-gray-500 leading-relaxed">
+						Our signature craftsmanship has been honed over a decade of manufacturing innovation here in Portland, Oregon. We
+						combine the skills of our small in-house team with the collective strength of collaborators throughout the US to
+						deliver quality products worth investing in.
+					</p>
+				</div>
+				<!-- IMG -->
+				<div class="flex justify-center mt-6">
+					<img
+						class="w-full max-w-[1052px] h-auto max-h-[592px] object-cover rounded-[10px]"
+						src="images/hard-way/house-img.png"
+						alt="house-img" />
+				</div>
+			</section>
+			<!-- HARD WAY END -->
+
+			<!-- MAKE WORK START -->
+			<section class="px-4">
+				<div class="flex flex-col items-center mt-16 md:mt-20 text-center">
+					<h1 class="text-3xl md:text-5xl text-black">Make Work Meaningful</h1>
+					<p class="mt-4 md:mt-7 max-w-[789px] text-sm md:text-[16px] text-gray-500 leading-relaxed">
+						We're here because we believe that your work deserves the best. A team that loves working together is the magic that
+						makes it all happen.
+					</p>
+				</div>
+
+				<!-- MAKE WORK__IMG-SECTION -->
+				<div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 lg:grid-cols-6 gap-4 max-w-[1365px] mx-auto mt-12 md:mt-20">
+					<img class="w-full rounded-md" src="images/make work/first-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/second-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/third-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/fourth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/fifth-personn-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/sixth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/seventh-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/eighth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/nineth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/tenth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/eleventh-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/twelfth-person-img.png" alt="img" />
+					<img class="w-full rounded-md" src="images/make work/therteenth-person-img.png" alt="therteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/fourteenth-person-img.png" alt="fourteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/fifteenth-person-img.png" alt="fifteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/sixteenth-person-img.png" alt="sixteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/seventeenth-person-img.png" alt="seventeenth-person-img" />
+					<img class="w-full rounded" src="images/make work/eighteenth-person-img.png" alt="eighteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/nineteenth-person-img.png" alt="nineteenth-person-img" />
+					<img class="w-full rounded" src="images/make work/twentieth-person-img.png" alt="twelfth-person-img" />
+					<img class="w-full rounded" src="images/make work/twenty-first-person-img.png" alt="twenty-first-person-img" />
+					<img class="w-full rounded" src="images/make work/twenty-second-person-img.png" alt="twenty-second-person-img" />
+					<img class="w-full rounded" src="images/make work/twenty-third-person-img.png" alt="twenty-third-person-img" />
+					<img class="w-full rounded" src="images/make work/twenty-fourth-person-img.png" alt="twenty-fourth-person-img" />
+				</div>
+
+				<div class="flex flex-col items-center mt-12 md:mt-20 text-center">
+					<h1 class="text-3xl md:text-5xl text-black">We Hope You'll Join Us</h1>
+					<p class="mt-4 md:mt-7 text-[13px] text-black font-medium tracking-wider uppercase hover:underline cursor-pointer">
+						Read More About Our Story
+					</p>
+				</div>
+			</section>
+			<!-- MAKE WORK END -->
+
+			<!-- DESIGN START -->
+			<section
+				class="mx-auto mt-16 md:mt-24 w-[calc(100%-2rem)] max-w-[1340px] h-[300px] md:h-[404px] rounded-[10px] bg-[#9AA8B1] px-4">
+				<div class="h-full flex flex-col items-center justify-center text-center">
+					<img class="w-8 md:w-auto" src="images/design-images/leaf.svg" alt="leaf-img" />
+					<h1 class="text-3xl md:text-5xl mt-4 md:mt-6 text-white">Design Inspires</h1>
+					<p class="mt-4 md:mt-6 text-sm md:text-lg text-gray-200 max-w-[500px]">
+						Build your dream workspace, so you can get your best work done.
+					</p>
+				</div>
+			</section>
+			<!-- DESIGN END -->
+		</main>
+		<!-- MAIN END -->
+
+		<!-- FOOTER START -->
+		<footer class="bg-[#F9F9F9] pb-5 px-4 md:px-12 pt-20 mt-[39px]">
+			<div class="max-w-[1365px] mx-auto relative">
+				<!-- MAIN KONTENT -->
+				<div class="flex flex-col lg:flex-row lg:items-start transition-all gap-10 lg:gap-36">
+					<!-- LINKS SECTION -->
+					<div class="w-full lg:w-auto">
+						<ul class="flex flex-col gap-4 text-[22px] font-normal tracking-wide text-[#1c1c1c]">
+							<li>
+								<a href="#" class="hover:text-gray-500">Shop</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">About</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">Journal</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">Support</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">COVID-19 Info</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">Order Status</a>
+							</li>
+							<li>
+								<a href="#" class="hover:text-gray-500">Corporate Sales</a>
+							</li>
+						</ul>
+					</div>
+					<!-- NEWSLETTER SECTION -->
+					<div class="w-full max-w-[380px]">
+						<h2 class="text-[22px] font-medium text-[#1c1c1c]">Newsletter Signup</h2>
+						<p class="text-[14px] mt-5 text-gray-400 leading-6">
+							Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else
+							going on behind the scenes at Grovemade.
+						</p>
+						<div class="mt-8 border-b border-gray-400 w-full"></div>
+					</div>
+				</div>
+				<div class="absolute right-0 top-[-40px] lg:top-[-45px]">
+					<a href="#">
+						<img
+							class="rounded-[10px] w-14 h-14 lg:w-auto lg:h-auto object-cover"
+							src="images/footer/go-up.png"
+							alt="go-up-img" />
+					</a>
+				</div>
+
+				<!-- FOOTER BOTTOM -->
+				<div class="mt-14 flex flex-wrap justify-center lg:justify-end gap-7 text-[13px] text-gray-400">
+					<a href="#" class="hover:text-black">©2020 Grovemade</a>
+					<a href="#" class="hover:text-black">Terms & Conditions</a>
+					<a href="#" class="hover:text-black">Privacy Policy</a>
+					<a href="#" class="text-black font-medium">Site by Department</a>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER END -->
+
+		<!-- JS -->
+		<script src="main.js"></script>
+	</body>
+</html>
